@@ -11,9 +11,13 @@
       playGame('rock')
     "> Rock </button>
 
-    <button> Paper </button>
+    <button onclick="
+      playGame('paper')
+    "> Paper </button>
 
-    <button> Scissors </button>
+    <button onclick="
+      playGame('scissors')
+    "> Scissors </button>
     
     <p class="resultP"></p>
 
@@ -21,10 +25,20 @@
 
     <p class="scoreP"></p>
 
-    <button> Reset Score </button>
+    <button onclick="
+      score.wins = 0
+      score.loses = 0
+      score.ties = 0
+
+      localStorage.removeItem('score')
+      
+      resultPage.innerHTML = ``
+      selectionPage.innerHTML = ``
+      scorePage.innerHTML = `Wins: ${score.wins} Loses: ${score.loses} Ties: ${score.ties}`
+    "> Reset Score </button>
 
     <script>
-      let score = {
+      let score = JSON.parse(localStorage.getItem('score')) || {
         wins: 0,
         loses: 0,
         ties: 0
@@ -85,11 +99,12 @@
           score.ties += 1
         }
 
+        localStorage.setItem('score', JSON.stringify(score))
+
+        // Changing the body to show result, moves and scores
         resultPage.innerHTML = `${result}`
-
         selectionPage.innerHTML = `You choose ${userMove}. Computer choose ${compMove}.`
-
-        resultPage.innerHTML = `Wins: ${score.wins} Loses: ${score.loses} Ties: ${score.ties}`
+        scorePage.innerHTML = `Wins: ${score.wins} Loses: ${score.loses} Ties: ${score.ties}`
       }
     </script>
   </body>
