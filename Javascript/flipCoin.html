@@ -23,7 +23,7 @@
 
     <button onclick="
       if (score.wins == 0 && score.loses == 0) {
-        alert(`Score is already resetted!`)
+        alert(`Score is already reset!`)
       }
       else {
         score = {
@@ -33,7 +33,7 @@
         
         localStorage.removeItem('score')
 
-        alert(`Score is resetted! \n
+        alert(`Score is reset! \n
 Wins: ${score.wins} Loses: ${score.loses}`)
       }
     "> Reset Score </button>

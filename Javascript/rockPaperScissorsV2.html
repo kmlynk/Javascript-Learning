@@ -27,7 +27,7 @@
 
     <button onclick="
       if (score.wins == 0 && score.losses == 0 && score.ties == 0) {
-        alert(`Score is already resetted!`)
+        alert(`Score is already reset!`)
       }
       else {
         score.wins = 0
@@ -37,14 +37,14 @@
         // Delete score from local storage
         localStorage.removeItem('score')
 
-        alert(`Score Resetted! \n
+        alert(`Score Reset! \n
 Wins: ${score.wins} Loses: ${score.losses} Ties: ${score.ties}`)
       }
     "> Reset Score </button>
 
     <script>
       // Take score from local storage and convert it to JS 
-      // If score is resetted and removed from local storage
+      // If score is reset and removed from local storage
 
       let score = JSON.parse(localStorage.getItem('score')) || {
         wins: 0,
