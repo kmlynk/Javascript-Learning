@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Flip Coin Guess </title>
+  </head>
+
+  <body>
+    <p>
+      Guess It!
+    </p>
+
+    <button onclick="
+      playGame('heads')
+    "> Heads </button>
+
+    <button onclick="
+      playGame('tails')
+    "> Tails </button>
+
+    <button onclick="
+      alert(`Wins: ${score.wins} Loses: ${score.loses}`)
+    "> Show Score </button>
+
+    <button onclick="
+      if (score.wins == 0 && score.loses == 0) {
+        alert(`Score is already resetted!`)
+      }
+      else {
+        score = {
+          wins: 0,
+          loses: 0
+        }
+        
+        localStorage.removeItem('score')
+
+        alert(`Score is resetted! \n
+Wins: ${score.wins} Loses: ${score.loses}`)
+      }
+    "> Reset Score </button>
+
+    <script>
+      let score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        loses: 0
+      }
+
+      function playGame(guess) {
+        const coin = coinFlip();
+
+        if (guess != coin) {
+          result = 'You could not guess it!'
+          score.loses += 1
+        }
+        else {
+          result = 'You guessed it right!'
+          score.wins += 1
+        }
+
+        localStorage.setItem('score', JSON.stringify(score))
+
+        alert(`You guessed ${guess}. Coin flipped and came ${coin}. ${result} \n
+Wins: ${score.wins} Loses: ${score.loses}`)
+      }
+
+      function coinFlip() {
+        const random = Math.random()
+        let coin = ''
+
+        if (random >= 0 && random < 1/2) {
+          coin = 'heads'
+        }
+        else coin = 'tails'
+
+        return coin
+      }
+    </script>
+  </body>
+</html>
