@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Youtube Sub Button </title>
+  </head>
+
+  <body>
+    <p> Youtube Subscribe Button </p>
+
+    <button onclick="
+      youtubeSub()
+    " class="youtubeSubButton"> Subscribe </button>
+
+    <script>
+      function youtubeSub() {
+        const subButton = document.querySelector('.youtubeSubButton')
+
+        // innerText is same as innerHTML but just for text
+        if (subButton.innerText == 'Subscribe') {
+          subButton.innerText = 'Subscribed'
+        }
+        else {
+          subButton.innerText = 'Subscribe'
+        }
+      }
+    </script>
+  </body>
+</html>
