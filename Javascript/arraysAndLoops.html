@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Arrays and Loops </title>
+  </head>
+
+  <body>
+    <script>
+      const arr = [10, 20, 30]
+      console.log("🚀 ~ file: arraysAndLoops.html:10 ~ arr:", arr)
+
+      arr[1]
+      console.log("🚀 ~ file: arraysAndLoops.html:13 ~ arr[1]:", arr[1])
+
+      arr[0] = 99
+      console.log("🚀 ~ file: arraysAndLoops.html:16 ~ arr[0]:", arr[0])
+
+      const arr2 = [1, 'hello', true, {name : 'socks'}, [1, 2]]
+      console.log("🚀 ~ file: arraysAndLoops.html:19 ~ arr2:", arr2)
+
+      Array.isArray([1, 2])
+      console.log("🚀 ~ file: arraysAndLoops.html:22 ~ Array.isArray([1, 2]):", Array.isArray([1, 2]))
+
+      console.log(arr.length)
+
+      arr.push(100)
+      console.log(arr)
+
+      arr.splice(0, 2)
+      console.log("🚀 ~ file: arraysAndLoops.html:30 ~ arr:", arr)
+
+      let i = 1
+
+      while (i <= 10) {
+        console.log("🚀 ~ file: arraysAndLoops.html:35 ~ i:", i)
+        i++
+      }
+
+      for (let i = 1 ; i <= 5; i++) {
+        console.log("🚀 ~ file: arraysAndLoops.html:40 ~ i:", i)
+      }
+
+    </script>
+  </body>
+</html>
