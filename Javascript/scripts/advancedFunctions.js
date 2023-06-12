@@ -1,3 +1,4 @@
+/*
 const function1 = function() {
   console.log('Hello')
 }
@@ -30,3 +31,14 @@ function run(param) {
 run(function() {
   console.log('Hello 4')
 })
+*/
+
+// Wait for n milliseconds - 1000ms = 1s
+setTimeout(function() {
+  console.log('Timeout')
+}, 2000)
+
+// Run function every n milliseconds
+setInterval(function() {
+  console.log('Interval')
+}, 3000)
