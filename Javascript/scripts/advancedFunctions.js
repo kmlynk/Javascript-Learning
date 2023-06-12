@@ -33,6 +33,7 @@ run(function() {
 })
 */
 
+/*
 // Wait for n milliseconds - 1000ms = 1s
 setTimeout(function() {
   console.log('Timeout')
@@ -42,3 +43,12 @@ setTimeout(function() {
 setInterval(function() {
   console.log('Interval')
 }, 3000)
+*/
+
+[
+  'Make Dinner',
+  'Wash Dishes',
+  'Watch Youtube'
+].forEach(function(value, index) {
+  console.log(value, index)
+})
