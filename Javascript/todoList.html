@@ -2,20 +2,23 @@
 <html>
   <head>
     <title> To-Do List </title>
+    <link rel="stylesheet" href="styles/todoList.css">
   </head>
 
   <body>
     <p> To-Do List </p>
 
-    <input placeholder="To-Do Name" class="js-todoInput" onkeydown="
-      handleKeyPress(event)
-    ">
+    <div class="css-todo-input-grid">
+      <input placeholder="To-Do Name" class="js-todoInput css-todoInput">
 
-    <button onclick="
-      addToDo()
-    "> Add </button>
+      <input type="date" class="js-dueDateInput css-dueDateInput">
 
-    <div class="js-todo-list"></div>
+      <button class="css-addButton" onclick="
+        addToDo()
+      "> Add </button>
+    </div>
+
+    <div class="js-todo-list css-todo-grid"></div>
 
     <script src="scripts/todoList.js"></script>
   </body>
